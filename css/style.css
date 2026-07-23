@@ -332,6 +332,11 @@ img { max-width: 100%; display: block; }
   font-size: 3.2rem;
   margin-bottom: 0.3rem;
 }
+.hero-text h1 .credential {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-color-light);
+}
 .hero-text h2 {
   font-size: 1.6rem;
   font-weight: 500;
