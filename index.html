@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anis Fakhfakh | Data Scientist</title>
+<meta name="description" content="Anis Fakhfakh — Data Scientist (M.A.Sc) specializing in computer vision, time-series forecasting, NLP and applied machine learning.">
+
+<!-- Favicon (simple "AF" monogram) -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- Google Font: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<!--
+  INIT SCRIPT — must run here (in <head>, before CSS paints), not in js/script.js.
+  Why: if we waited until script.js runs at the bottom of the page, the page would
+  flash the light theme / English text for a split second before switching. This
+  tiny script runs first and sets both the saved theme and saved language
+  immediately. The click-to-toggle logic for both lives in js/script.js — this
+  part ONLY sets the initial state.
+-->
+<script>
+  (function () {
+    var savedTheme = localStorage.getItem("theme");
+    var theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+
+    var savedLang = localStorage.getItem("lang");
+    document.documentElement.setAttribute("data-lang", savedLang || "en");
+  })();
+</script>
+</head>
+<body>
+
+<!--
+  ============================================================================
+  SITE SETTINGS — quick reference
+  ============================================================================
+  Plain HTML has no "variables", so your name/contact info appears literally
+  in a few spots below. If you ever change your email/phone/links, update it
+  in these places:
+    1) The Hero section        (search for: id="home")
+    2) The Contact section      (search for: id="contact")
+    3) The Footer               (bottom of this file)
+
+  BILINGUAL CONTENT: most text on this site appears twice — once inside a
+  tag with class="lang-en" (English) and once with class="lang-fr" (French),
+  right next to each other. Only one shows at a time depending on the
+  language button in the header. To edit copy, find the matching lang-en /
+  lang-fr block and edit the text directly — no need to touch anything else.
+  Skills/tools that are spelled the same in both languages (Python, Docker,
+  Claude Code, etc.) are NOT duplicated — there's just one copy.
+
+  Full step-by-step editing instructions (colors, photo, CV, projects,
+  skills, Formspree, certifications) are in CUSTOMIZE.md in this same folder.
+  ============================================================================
+-->
+
+<!-- ================= HEADER / NAV ================= -->
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="#home" class="logo">Anis<span class="accent-dot">.</span>Fakhfakh</a>
+
+    <nav id="main-nav">
+      <a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+      <a href="#about"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+      <a href="#experience"><span class="lang-en">Experience</span><span class="lang-fr">Expérience</span></a>
+      <a href="#education"><span class="lang-en">Education</span><span class="lang-fr">Formation</span></a>
+      <!--
+        To enable the hidden Certifications section (see the big commented-out
+        block right before <section id="skills"> further down), also uncomment
+        the line below so a nav tab appears for it too:
+      <a href="#certifications"><span class="lang-en">Certifications</span><span class="lang-fr">Certifications</span></a>
+      -->
+      <a href="#skills"><span class="lang-en">Skills</span><span class="lang-fr">Compétences</span></a>
+      <a href="#projects"><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></a>
+      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="lang-toggle" aria-label="Switch language / Changer de langue" title="Switch language / Changer de langue">
+        <span class="lang-en">FR</span>
+        <span class="lang-fr">EN</span>
+      </button>
+
+      <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO / HOME ================= -->
+<section id="home" class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="hero-greeting reveal">
+        <span class="lang-en">Hi, my name is</span>
+        <span class="lang-fr">Bonjour, je m'appelle</span>
+      </p>
+      <h1 class="reveal">Anis Fakhfakh</h1>
+      <h2 class="reveal">
+        <span class="lang-en">I'm a</span><span class="lang-fr">Je suis</span>
+        <span id="typing-role">Data Scientist</span><span class="cursor">|</span>
+      </h2>
+      <div class="hero-buttons reveal">
+        <a href="#projects" class="btn btn-primary">
+          <span class="lang-en">View Projects</span><span class="lang-fr">Voir les projets</span>
+        </a>
+        <a href="assets/cv/Anis-Fakhfakh-CV.pdf" class="btn btn-outline" download>
+          <span class="lang-en">Download CV</span><span class="lang-fr">Télécharger le CV</span>
+        </a>
+        <a href="#contact" class="btn btn-text">
+          <span class="lang-en">Contact Me →</span><span class="lang-fr">Me contacter →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal">
+      <div class="photo-frame">
+        <img src="assets/images/profile.jpg" alt="Portrait of Anis Fakhfakh">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <div class="about-content reveal">
+    <p class="lang-en">
+      Data Scientist with an M.A.Sc. in Information Technology, combining a strong quantitative foundation with hands-on experience developing practical data-driven solutions. Experienced in designing solutions across computer vision, time-series forecasting, NLP, and other machine learning applications. Skilled at translating complex data into actionable insights, communicating findings to cross-functional stakeholders, and building AI solutions that drive measurable business impact.
+    </p>
+    <p class="lang-en">
+      Based in Montreal, QC, Canada, I am seeking an opportunity to apply machine learning and data analytics to solve real-world business or R&D challenges.
+    </p>
+  
+    <p class="lang-fr">
+      Scientifique de données titulaire d'une maîtrise en technologies de l'information, alliant une solide formation quantitative à une expérience pratique dans le développement de solutions basées sur les données. Expérimenté dans la conception de solutions en vision par ordinateur, prévision de séries chronologiques, traitement du langage naturel et autres applications de l'apprentissage automatique. Je transforme des données complexes en informations exploitables pour soutenir la prise de décision, communique efficacement les résultats à des équipes multidisciplinaires et développe des solutions d'IA générant un impact mesurable.
+    </p>
+    <p class="lang-fr">
+      Basé à Montréal, QC, Canada, je suis à la recherche d'une nouvelle opportunité où je pourrai mettre à profit l'apprentissage automatique et l'analytique des données afin de relever des défis concrets, tant en industrie qu'en R&D.
+    </p>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section alt-bg">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Experience</span><span class="lang-fr">Expérience</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- ============ COPY BLOCK: EXPERIENCE ITEM (start) ============
+           To add a new job: copy from this line down to "COPY BLOCK:
+           EXPERIENCE ITEM (end)" and paste it as the FIRST item in this
+           list (most recent job goes on top). Edit the lang-en / lang-fr
+           text pairs. Add or remove <li> line PAIRS freely for however
+           many bullets you need (each bullet needs one lang-en <li> and
+           one matching lang-fr <li>).
+      -->
+      <div class="timeline-item reveal" data-animation="slideInFromLeft">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3><span class="lang-en">IT Engineer <span class="badge">Contract</span></span><span class="lang-fr">Ingénieur TI <span class="badge">Contractuel</span></span></h3>
+          <h4><span class="lang-en">Private real estate appraisal firm</span><span class="lang-fr">Secteur de l'évaluation immobilière</span></h4>
+          <span class="meta">
+            <span class="lang-en">March 2026 – June 2026 · Montréal, Québec, Canada</span>
+            <span class="lang-fr">Mars 2026 – Juin 2026 · Montréal, Québec, Canada</span>
+          </span>
+          <ul class="lang-en">
+            <li>Developed Python-based decision-support tools for comparable property analysis and database querying, enabling faster identification of relevant past evaluations and supporting more accurate property valuation decisions for a private broker.</li>
+            <li>Designed automated Python and SQL pipelines to generate and pre-fill assessment reports from source documents, standardizing workflows, reducing manual data entry, and significantly shortening hours of manual report pre-filling time.</li>
+          </ul>
+          <ul class="lang-fr">
+            <li>Développement d'outils d'aide à la décision en Python pour l'analyse de propriétés comparables et l'interrogation de bases de données, appuyant des décisions d'évaluation foncière plus précises pour un courtier privé.</li>
+            <li>Conception de pipelines automatisés en Python et SQL pour préremplir des rapports d'évaluation à partir de documents sources, standardisant les processus, réduisant considérablement le temps nécessaire au préremplissage des rapports.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- ============ COPY BLOCK: EXPERIENCE ITEM (end) ============ -->
+
+      <div class="timeline-item reveal" data-animation="slideInFromRight">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3><span class="lang-en">Research Assistant</span><span class="lang-fr">Assistant de recherche</span></h3>
+          <h4>LIO/CRCHUM</h4>
+          <span class="meta">
+            <span class="lang-en">May 2023 – December 2025 · Montréal, Québec, Canada</span>
+            <span class="lang-fr">Mai 2023 – Décembre 2025 · Montréal, Québec, Canada</span>
+          </span>
+          <ul class="lang-en">
+            <li>Implemented a novel PyTorch deep learning framework estimating knee flexion angles from monocular RGB walking videos, achieving clinically reliable performance (MAE: 2.4°) and outperforming state-of-the-art pose estimation baselines.</li>
+            <li>Validated the statistical significance of two architectural improvements via ablation studies: MAE reduction via feature map regularization (-8.27%) and KneeKG inpainting (-9.30%), confirmed with SPM1D over 85%+ of the gait cycle.</li>
+            <li>Developed a KneeKG Clinical AI workflow using MMDetection, OpenCV and h5py, orchestrating data preprocessing, biomechanical annotation, model training, and evaluation across a 30-participant dataset for clinical gait analysis research.</li>
+            <li>Adapted a repeated holdout cross-validation to reduce subject-specific overfitting and strengthen clinical model reliability.</li>
+            <li>Communicated results to biomechanical researchers from CRCHUM and industry partners EMOVI and MOVECK.</li>
+          </ul>
+          <ul class="lang-fr">
+            <li>Conception d'un framework d'apprentissage profond novateur en PyTorch estimant les angles de flexion du genou à partir de vidéos de marche, cliniquement fiable (MAE : 2,4°) et surpassant les baselines en estimation de pose.</li>
+            <li>Validation de la signification statistique de 2 améliorations architecturales par réduction de la MAE : la régularisation des feature maps (-8,27%) et le KneeKG inpainting (-9,30%), confirmées par SPM1D sur plus de 85% du cycle de marche.</li>
+            <li>Développement d'un workflow d'IA clinique KneeKG utilisant MMDetection, OpenCV et h5py : le prétraitement des données, l'annotation biomécanique, l'entraînement de modèles et l'évaluation sur un ensemble de données de 30 participants.</li>
+            <li>Communication des résultats aux chercheurs en biomécanique du CRCHUM et aux partenaires industriels Emovi et Moveck.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-animation="slideInFromLeft">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3><span class="lang-en">Data Scientist</span><span class="lang-fr">Scientifique de données</span></h3>
+          <h4>Cognira</h4>
+          <span class="meta">
+            <span class="lang-en">January 2022 – December 2022 · Tunis, Tunisia</span>
+            <span class="lang-fr">Janvier 2022 – Décembre 2022 · Tunis, Tunisie</span>
+          </span>
+          <ul class="lang-en">
+            <li>Designed and implemented modular, scalable Azure data pipelines using Databricks, in collaboration with the data engineering team, processing large-scale retail time-series data across thousands of product SKUs and categories.</li>
+            <li>Engineered demand forecasting features (price elasticity, promotions, seasonality and calendar effects), improving unit sales forecasting by 2-5% (Weighted Absolute Percentage Error reduction) across 65% of retail product categories.</li>
+            <li>Automated concurrent promotion campaigns lift quantification and advised clients on the recommended strategies.</li>
+          </ul>
+          <ul class="lang-fr">
+            <li>Développement de caractéristiques de prévision capturant l'élasticité des prix, les promotions et la saisonnalité, améliorant les prévisions de ventes unitaires de 2-5% (réduction de l'erreur absolue en pourcentage pondérée) sur 65% des catégories.</li>
+            <li>Quantification du "lift" des campagnes de promotion simultanées et conseil des stratégies recommandées aux clients.</li>
+            <li>Mise en œuvre de pipelines de données Azure avec Databricks, en collaboration avec l'équipe d'ingénierie des données, traitant des séries chronologiques de vente au détail à grande échelle sur des milliers de SKUs et catégories de produits.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-animation="slideInFromRight">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3><span class="lang-en">R&amp;D Deep Learning Intern</span><span class="lang-fr">Stagiaire R&amp;D en Apprentissage Profond</span></h3>
+          <h4>Lab-STICC / IMT Atlantique</h4>
+          <span class="meta">
+            <span class="lang-en">April 2021 – September 2021 · Plouzané, France</span>
+            <span class="lang-fr">Avril 2021 – Septembre 2021 · Plouzané, France</span>
+          </span>
+          <ul class="lang-en">
+            <li>Improved the spatiotemporal reconstruction performance of a 4DVarNet model by 3.2% through adversarial learning techniques and reaching a total 9.7% improvement through additional stochastic learning components.</li>
+            <li>Refactored the 4DVarNet framework from PyTorch to PyTorch Lightning, improving modularity and reproducibility.</li>
+          </ul>
+          <ul class="lang-fr">
+            <li>Amélioration des performances de reconstruction spatio-temporelle du modèle 4DVarNet de 3,2% grâce à des techniques d'apprentissage contradictoire et atteignant une amélioration totale de 9,7% par ajout d'apprentissage stochastique.</li>
+            <li>Refactorisation du framework 4DVarNet vers PyTorch Lightning, améliorant la modularité du code et sa reproductibilité.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-animation="slideInFromLeft">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3><span class="lang-en">Data Science / NLP Intern</span><span class="lang-fr">Stagiaire Data Science / NLP</span></h3>
+          <h4>axefinance</h4>
+          <span class="meta">
+            <span class="lang-en">June 2020 – August 2020 · Tunis, Tunisia</span>
+            <span class="lang-fr">Juin 2020 – Août 2020 · Tunis, Tunisie</span>
+          </span>
+          <ul class="lang-en">
+            <li>Scraped and preprocessed a corpus of 5,000 financial news articles using BeautifulSoup and lxml for NLP analysis.</li>
+            <li>Built and deployed a Guided LDA topic modelling pipeline using Gensim and scikit-learn, achieving 0.7 topic coherence across 3 predefined financial topics and 20 seed words per topic.</li>
+          </ul>
+          <ul class="lang-fr">
+            <li>Extraction et prétraitement d'un corpus de 5000 articles financiers à l'aide de BeautifulSoup et lxml pour l'analyse NLP.</li>
+            <li>Conception et déploiement à l'aide de Flask d'un pipeline de modélisation de sujets "Guided LDA" en utilisant Gensim et scikit-learn, atteignant une cohérence de sujet de 0,7 sur 3 thèmes financiers prédéfinis avec 20 mots-clés experts par thème.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Education</span><span class="lang-fr">Formation</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="education-grid">
+
+      <!-- COPY this whole .education-card block to add a new entry -->
+      <div class="card education-card reveal">
+        <h3>
+          <span class="lang-en">Master of Applied Sciences in Information Technology <span class="badge">Thesis-Based</span></span>
+          <span class="lang-fr">Maîtrise en génie des technologies de l'information <span class="badge">avec mémoire</span></span>
+        </h3>
+        <h4><span class="lang-en">École de technologie supérieure (ÉTS)</span><span class="lang-fr">École de technologie supérieure (ÉTS)</span></h4>
+        <span class="meta">2023 – 2025 · <span class="lang-en">Montréal, Québec, Canada</span><span class="lang-fr">Montréal, Québec, Canada</span></span>
+        <p>GPA: 4.12 / 4.30</p>
+        <!-- Thesis download link -->
+        <a class="btn btn-outline thesis-link" href="https://espace.etsmtl.ca/id/eprint/3698/" target="_blank" rel="noopener">
+          <span class="lang-en">View Thesis</span><span class="lang-fr">Voir la thèse</span>
+        </a>
+      </div>
+
+      <div class="card education-card reveal">
+        <h3>
+          <span class="lang-en">Bachelor of Engineering in Applied Mathematics and Data Science</span>
+          <span class="lang-fr">Diplôme d'ingénieur en mathématiques appliquées et science des données</span>
+        </h3>
+        <h4>École Nationale d'Ingénieurs de Tunis (ENIT)</h4>
+        <span class="meta">2018 – 2021 · <span class="lang-en">Tunis, Tunisia</span><span class="lang-fr">Tunis, Tunisie</span></span>
+      </div>
+
+      <div class="card education-card reveal">
+        <h3>
+          <span class="lang-en">Pre-Engineering Course Preparatory Diploma <span class="badge">Math &amp; Physics</span></span>
+          <span class="lang-fr">Classes préparatoires aux études d'ingénieur <span class="badge">Mathématiques et Physique</span></span>
+        </h3>
+        <h4>Institut Préparatoire aux Études d'Ingénieurs de Sfax (IPEIS)</h4>
+        <span class="meta">2016 – 2018 · <span class="lang-en">Sfax, Tunisia</span><span class="lang-fr">Sfax, Tunisie</span></span>
+        <p><span class="lang-en">National ranking: 106 / 1300</span><span class="lang-fr">Classement national : 106 / 1300</span></p>
+      </div>
+
+    </div>
+
+    <div class="languages reveal">
+      <h3 class="sub-heading"><span class="lang-en">Languages</span><span class="lang-fr">Langues</span></h3>
+      <div class="pill-cloud">
+        <span class="pill"><span class="lang-en">English — Professional</span><span class="lang-fr">Anglais — Professionnel</span></span>
+        <span class="pill"><span class="lang-en">French — Professional</span><span class="lang-fr">Français — Professionnel</span></span>
+        <span class="pill"><span class="lang-en">Arabic — Native</span><span class="lang-fr">Arabe — Langue maternelle</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
+  ============================================================================
+  HIDDEN: CERTIFICATIONS SECTION (disabled by default)
+  ============================================================================
+  Anis doesn't have certifications to list yet. This whole section is turned
+  off by wrapping it in a comment, so it takes up no space and shows nothing.
+
+  TO ENABLE IT LATER:
+  1) Delete the comment-start marker line directly below this instruction
+     block, and the matching comment-end marker line after the closing
+     </section> tag further down.
+  2) Also go up to the header nav list above and uncomment the
+     "Certifications" nav link (instructions are right there).
+  3) Edit the example certification card's placeholder text. To add more
+     than one certification, copy the whole "card education-card" block
+     (from its opening <div> to its closing </div>) and paste it again.
+
+  Comment-start marker is the line that begins with "<!" followed by two
+  dashes, right below. Comment-end marker is the line that begins with two
+  dashes followed by ">", right above the closing </section> tag.
+-->
+<!--
+<section id="certifications" class="section alt-bg">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Certifications</span><span class="lang-fr">Certifications</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="education-grid">
+      <div class="card education-card reveal">
+        <h3>Certification Name</h3>
+        <h4>Issuing Organization</h4>
+        <span class="meta">Month Year</span>
+        <a class="btn btn-outline thesis-link" href="PASTE_CERTIFICATE_URL_HERE" target="_blank" rel="noopener">
+          <span class="lang-en">View Certificate</span><span class="lang-fr">Voir le certificat</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section alt-bg">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Skills</span><span class="lang-fr">Compétences</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <!--
+      Skill pills use two kinds of icons:
+      1) Generic outline icons (inline SVG) for concepts like "Machine Learning" —
+         there's no real logo for a concept, so these are simple line icons that
+         automatically match your theme color.
+      2) Real brand logos for actual tools/languages like Python or Docker — most
+         come from the free simpleicons.org CDN (just edit the slug in the URL to
+         change one), and a few (Azure, Power BI, LinkedIn) use local files you
+         provided in assets/logos/ instead.
+    -->
+
+    <div class="skills-grid">
+
+      <div class="skill-category reveal">
+        <h3><span class="lang-en">ML &amp; Data Science</span><span class="lang-fr">Apprentissage automatique &amp; Science de données</span></h3>
+        <div class="pill-cloud">
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04Z"></path></svg> <span class="lang-en">Machine Learning &amp; Predictive Modeling</span><span class="lang-fr">Machine Learning</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="4" rx="1"></rect><rect x="4" y="10" width="16" height="4" rx="1"></rect><rect x="4" y="16" width="16" height="4" rx="1"></rect></svg> <span class="lang-en">Deep Learning</span><span class="lang-fr">Apprentissage profond</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"></path><circle cx="12" cy="12" r="3"></circle></svg> <span class="lang-en">Computer Vision</span><span class="lang-fr">Vision par ordinateur</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> <span class="lang-en">Time Series Forecasting</span><span class="lang-fr">Prévision de séries chronologiques</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> <span class="lang-en">Natural Language Processing</span><span class="lang-fr">NLP</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg> <span class="lang-en">Feature Engineering</span><span class="lang-fr">Feature Engineering</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> <span class="lang-en">Statistical Analysis &amp; Testing</span><span class="lang-fr">Analyse &amp; tests statistiques</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> <span class="lang-en">Data Visualization</span><span class="lang-fr">Visualisation de données</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg> <span class="lang-en">LLMs &amp; Agentic AI</span><span class="lang-fr">LLMs et IA agentique</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9Z"></path><path d="M11 3 8 9l4 12 4-12-3-6"></path><path d="M2 9h20"></path></svg> <span class="lang-en">ETL Pipelines</span><span class="lang-fr">Pipelines ETL</span></span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <h3><span class="lang-en">Engineering</span><span class="lang-fr">Ingénierie</span></h3>
+        <div class="pill-cloud">
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/python" alt=""> Python</span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> SQL</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/r" alt=""> R</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/cplusplus" alt=""> C / C++</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/docker" alt=""> Docker</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/git" alt=""> Git</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/databricks" alt=""> Databricks / Spark</span>
+          <span class="pill"><img class="pill-icon" src="assets/logos/azure.png" alt=""> Azure</span>
+          <span class="pill"><img class="pill-icon" src="assets/logos/powerbi.png" alt=""> Power BI</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <h3><span class="lang-en">Practices</span><span class="lang-fr">Pratiques</span></h3>
+        <div class="pill-cloud">
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path><circle cx="12" cy="12" r="4"></circle></svg> MLOps</span>
+          <span class="pill"><img class="pill-icon" src="https://cdn.simpleicons.org/jira" alt=""><img class="pill-icon" src="https://cdn.simpleicons.org/confluence" alt=""> Agile (Jira, Confluence)</span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg> <span class="lang-en">Technical Documentation</span><span class="lang-fr">Documentation technique</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span class="lang-en">Unit Tests</span><span class="lang-fr">Tests unitaires</span></span>
+          <span class="pill"><svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg> Claude Code</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Projects</span><span class="lang-fr">Projets</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <h3 class="sub-heading reveal"><span class="lang-en">Personal Projects</span><span class="lang-fr">Projets personnels</span></h3>
+    <div class="projects-grid">
+
+      <!-- ============ COPY BLOCK: PROJECT CARD (start) ============
+           To add a new project: copy everything from this line down to
+           "COPY BLOCK: PROJECT CARD (end)" and paste it right before the
+           (end) line of the LAST card in this group. Then edit the title,
+           description, and link.
+
+           GITHUB LINK: the "View on GitHub" button appears AUTOMATICALLY
+           once you paste a real URL into its href="" below, replacing the
+           placeholder text ADD_GITHUB_LINK_HERE. Until then it stays
+           hidden automatically — you don't need to comment/uncomment
+           anything.
+      -->
+      <div class="project-card reveal">
+        <h4>
+          <span class="lang-en">Semi-Supervised Medical Image Segmentation with Interpolation Consistency Regularization</span>
+          <span class="lang-fr">Segmentation semi-supervisée d'images médicales avec régularisation par cohérence d'interpolation</span>
+        </h4>
+        <p class="lang-en">Implemented a semi-supervised MA-Net cardiac MRI segmentation model using interpolation consistency, achieving 74.34% DSC.</p>
+        <p class="lang-fr">Conception de segmentation d'IRM cardiaque MA-Net avec cohérence d'interpolation, atteignant un score DSC de 74,34%.</p>
+        <a class="btn btn-outline project-link" href="https://github.com/anisfakhfakh/ss-medical-image_seg-challenge" target="_blank" rel="noopener">
+          <img class="btn-icon" src="https://cdn.simpleicons.org/github" alt=""> <span class="lang-en">View on GitHub</span><span class="lang-fr">Voir sur GitHub</span>
+        </a>
+      </div>
+      <!-- ============ COPY BLOCK: PROJECT CARD (end) ============ -->
+
+      <div class="project-card reveal">
+        <h4><span class="lang-en">International Soccer Analytics Engine</span><span class="lang-fr">Analyse du football international</span></h4>
+        <p class="lang-en">Built and validated an Elo-based soccer prediction engine (5K+ fixtures), benchmarking against the 2026 World Cup results.</p>
+        <p class="lang-fr">Mise en œuvre d'un pipeline de bout en bout traitant plus de 23 000 matchs de football international avec un classement Elo.</p>
+        <a class="btn btn-outline project-link" href="ADD_GITHUB_LINK_HERE" target="_blank" rel="noopener">
+          <img class="btn-icon" src="https://cdn.simpleicons.org/github" alt=""> <span class="lang-en">View on GitHub</span><span class="lang-fr">Voir sur GitHub</span>
+        </a>
+      </div>
+
+      <div class="project-card reveal">
+        <h4><span class="lang-en">Bixi AI Trip Planner</span><span class="lang-fr">Planificateur intelligent Bixi</span></h4>
+        <p class="lang-en">Developed an AI trip planner combining BIXI bike availability, public transit routing, and LLM reasoning agents in real time.</p>
+        <p class="lang-fr">Développement d'un planificateur IA BIXI comparant les trajets vélo et transport en commun via un agent de raisonnement.</p>
+        <a class="btn btn-outline project-link" href="ADD_GITHUB_LINK_HERE" target="_blank" rel="noopener">
+          <img class="btn-icon" src="https://cdn.simpleicons.org/github" alt=""> <span class="lang-en">View on GitHub</span><span class="lang-fr">Voir sur GitHub</span>
+        </a>
+      </div>
+
+    </div>
+
+    <h3 class="sub-heading reveal projects-subheading-spaced"><span class="lang-en">Upwork / Freelance Projects</span><span class="lang-fr">Projets Upwork</span></h3>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <h4>
+          <span class="lang-en">PyTorch Personalized Federated Learning Framework <span class="badge">Upwork</span></span>
+          <span class="lang-fr">Framework d'apprentissage fédéré personnalisé en PyTorch <span class="badge">Upwork</span></span>
+        </h4>
+        <p class="lang-en">Built a custom federated learning approach from scratch involving a differential privacy setting, achieving accurate predictions with low communication overhead while preserving local clients' data privacy.</p>
+        <p class="lang-fr">Développement d'un framework d'apprentissage fédéré personnalisé performant, avec un module de confidentialité différentielle et à faible surcharge de communication.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <h4>
+          <span class="lang-en">Experimental Comparative Study on Federated Learning Frameworks <span class="badge">Upwork</span></span>
+          <span class="lang-fr">Étude comparative expérimentale des frameworks d'apprentissage fédéré <span class="badge">Upwork</span></span>
+        </h4>
+        <p class="lang-en">Benchmarked and compared federated learning simulators including TFF, Flower, FedML, and PySyft based on hyperparameter flexibility, computational efficiency, and predictive performance to support framework selection decisions.</p>
+        <p class="lang-fr">Analyse comparative de simulateurs d'apprentissage fédéré (TFF, Flower, FedML, PySyft) selon la flexibilité des hyperparamètres, l'efficacité computationnelle et la performance prédictive, pour orienter le choix du framework.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <h4>
+          <span class="lang-en">Sports Kinematics Benchmarking and Reporting <span class="badge">Upwork</span></span>
+          <span class="lang-fr">Analyse comparative et rapports en cinématique sportive <span class="badge">Upwork</span></span>
+        </h4>
+        <p class="lang-en">Evaluated and compared pose estimation methods (HRNet, OpenPose, MediaPipe, etc.) in accurately capturing kinematics from sports motion sequences using computer vision frameworks (OpenCV).</p>
+        <p class="lang-fr">Réalisation d'analyse comparative et évaluation de modèles d'estimation de pose (HRNet, OpenPose, MediaPipe, etc.) à partir de données de mouvements sportifs.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <h4>
+          <span class="lang-en">OOP-based Ecological Systems Simulation <span class="badge">Upwork</span></span>
+          <span class="lang-fr">Simulation de systèmes écologiques basée sur la POO <span class="badge">Upwork</span></span>
+        </h4>
+        <p class="lang-en">Customized an object-oriented Python ecological simulation system with modular architecture for scenario-based modeling.</p>
+        <p class="lang-fr">Personnalisation et modularisation d'un système de simulation écologique en Python pour la modélisation basée sur des scénarios.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT (always last) ================= -->
+<section id="contact" class="section alt-bg">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2><span class="lang-en">Contact Me</span><span class="lang-fr">Me contacter</span></h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-form-wrap reveal">
+        <!--
+          ============================================================
+          CONTACT FORM SETUP (Formspree) — do this once:
+          1) Go to https://formspree.io and create a free account.
+          2) Create a new form, verify it with your email.
+          3) Copy the endpoint URL it gives you (looks like
+             https://formspree.io/f/xxxxxxxx) and paste it into the
+             "action" attribute below, replacing the placeholder.
+          Until you do this, the form will show a friendly error
+          message when submitted — that's expected, not a bug.
+          ============================================================
+        -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <label for="name"><span class="lang-en">Name</span><span class="lang-fr">Nom</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email"><span class="lang-en">Email</span><span class="lang-fr">Courriel</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row">
+            <label for="message"><span class="lang-en">Message</span><span class="lang-fr">Message</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="form-submit-btn">
+            <span class="lang-en">Send Message</span><span class="lang-fr">Envoyer</span>
+          </button>
+          <div id="form-status" role="status"></div>
+        </form>
+      </div>
+
+      <div class="contact-links reveal">
+        <a class="contact-link" href="mailto:anis.fakhfakh@outlook.com">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6Z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>
+          anis.fakhfakh@outlook.com
+        </a>
+        <a class="contact-link" href="tel:+14383655562">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"></path></svg>
+          +1 (438) 365 5562
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/anis-fakhfakh-b079021a2" target="_blank" rel="noopener">
+          <img class="icon" src="assets/logos/linkedin.png" alt=""> LinkedIn
+        </a>
+        <a class="contact-link" href="https://github.com/anisfakhfakh" target="_blank" rel="noopener">
+          <img class="icon" src="https://cdn.simpleicons.org/github" alt=""> GitHub
+        </a>
+        <a class="contact-link" href="https://www.upwork.com/freelancers/anisfakhfakh" target="_blank" rel="noopener">
+          <img class="icon" src="https://cdn.simpleicons.org/upwork" alt=""> Upwork
+        </a>
+        <a class="contact-link" href="assets/cv/Anis-Fakhfakh-CV.pdf" download>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span class="lang-en">Download CV</span><span class="lang-fr">Télécharger le CV</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Anis Fakhfakh. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+    <a href="#home" class="back-to-top"><span class="lang-en">Back to top ↑</span><span class="lang-fr">Retour en haut ↑</span></a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
