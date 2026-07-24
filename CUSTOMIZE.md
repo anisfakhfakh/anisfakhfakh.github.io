@@ -45,7 +45,7 @@ Hero section (`id="home"`) in `index.html`.
 
 ## 5. Replace your CV
 
-Same idea: replace `assets/cv/Anis-Fakhfakh-CV.pdf` with your new PDF, keeping
+Same idea: replace `assets/cv/Anis FAKHFAKH - Data Scientist.pdf` with your new PDF, keeping
 the filename. If you rename it, update both places it's linked in
 `index.html`: the "Download CV" button in the Hero section, and the
 "Download CV" link in the Contact section.
